@@ -48,6 +48,7 @@
 				>
 				<input
 					type="number"
+					step="any"
 					class="form-control"
 					name="weight"
 					id="weight"
@@ -63,6 +64,7 @@
 				>
 				<input
 					type="number"
+					step="any"
 					class="form-control"
 					id="bodyfat"
 					name="bodyfat"
@@ -72,7 +74,38 @@
 					I will never share your details with anyone else.
 				</div>
 			</div>
+			<input type="radio" id="cut" name="goal" value="cut" />
+			<label for="cut">Cut</label><br />
+			<input type="radio" id="gain" name="goal" value="gain" />
+			<label for="gain">Gain</label><br />
+			<div class="mb-3">
+				<label for="factor" class="form-label"
+					>Percentage of deficit or surplus.</label
+				>
+				<input
+					type="number"
+					step="any"
+					class="form-control"
+					id="factor"
+					name="factor"
+					aria-describedby="emailHelp"
+				/>
+				<div id="emailHelp" class="form-text">
+					I will never share your details with anyone else.
+				</div>
+			</div>
 			<button type="submit" submit class="btn btn-primary">Submit</button>
 		</form>
+		<div>
+			<br />
+			<%=stats.Total_kal%>
+			<br />
+			<%=stats.fat_kal%>
+			<br />
+			<%=stats.protein_kal%>
+			<br />
+			<%=stats.carb_kal%>
+			<br />
+		</div>
 	</body>
 </html>
