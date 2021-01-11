@@ -1,0 +1,31 @@
+{
+  "name": "deit_calc",
+  "version": "1.0.0",
+  "description": "My diet calculator",
+  "main": "app.js",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wimpywarlord/Deit_calc.git"
+  },
+  "keywords": [
+    "kshitij",
+    "dhyani",
+    "wimpywarlord"
+  ],
+  "author": "kshitij dhyani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wimpywarlord/Deit_calc/issues"
+  },
+  "homepage": "https://github.com/wimpywarlord/Deit_calc#readme"
+}
