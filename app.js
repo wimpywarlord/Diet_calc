@@ -1,4 +1,5 @@
 var express = require("express");
+// var bcrypt=require('bcrypt-nodejs');
 var bodyParser = require("body-parser");
 
 var app = express();
@@ -61,12 +62,13 @@ function calculations(params) {
     var high_range_of_protein;
     if (goal_of_client == "gain") {
         console.log("PROTEIN RANGE FOR GAIN TRIGGERED");
-        low_range_of_protein = 1.1 * client_weight_in_lbs;
-        high_range_of_protein = 1.35 * client_weight_in_lbs;
+        low_range_of_protein = 1 * client_weight_in_lbs;
+        high_range_of_protein = 1.3 * client_weight_in_lbs;
     } else {
         console.log("PROTEIN RANGE FOR CUT TRIGGERED");
-        low_range_of_protein = 1.3 * client_weight_in_lbs;
-        high_range_of_protein = 1.7 * client_weight_in_lbs;
+        low_range_of_protein = 1.1 * client_weight_in_lbs;
+        high_range_of_protein = 1.2
+            * client_weight_in_lbs;
     }
     final_gram_of_protein = (high_range_of_protein + low_range_of_protein) /2
     console.log(final_gram_of_protein);
@@ -95,8 +97,9 @@ function calculations(params) {
     return { Total_kal : final_goal_cal, fat_kal : macro_count_of_fats, protein_kal : final_gram_of_protein, carb_kal : macro_for_carbs };
 }
 
-app.get("/", function (req,res) {
-    res.render("index.ejs",{answer : ""});
+app.get("/", function (req, res) {
+    // console.log(bcrypt.hashSync('123456', bcrypt.genSaltSync(5), null));
+    res.render("index.ejs",{stats : ""});
 })
 
 app.post("/result", function (req, res) {
@@ -106,6 +109,6 @@ app.post("/result", function (req, res) {
     })
 })
 
-app.listen(process.env.PORT || 3000, function () {
-    console.log("SERVER 3000 HAS STARTED");
+app.listen(process.env.PORT || 8000, function () {
+    console.log("SERVER 8000 HAS STARTED");
 });
